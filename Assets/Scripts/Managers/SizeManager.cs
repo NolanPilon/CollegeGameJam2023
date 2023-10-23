@@ -9,7 +9,7 @@ public class SizeManager : MonoBehaviour
 
     //SizeBar
     public Image sizeBar;
-    public float sizeAmount = 100f;
+    public float sizeAmount = 0.0f;
     private float sizeBarScaleMultiplier = 2.0f;
 
     public Image delaySizeBar;
@@ -63,6 +63,20 @@ public class SizeManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         delaySizeBar.fillAmount = sizeAmount / 100f;
+    }
+
+    public bool isFull()
+    {
+       if(sizeBar.fillAmount == 1 || sizeBar.fillAmount > 1)
+        {
+            sizeBar.fillAmount = 0;
+            sizeAmount = 0.0f;
+            return true;
+        }
+       else
+        {
+            return false;
+        }
     }
 }
 

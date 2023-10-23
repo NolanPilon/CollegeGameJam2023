@@ -38,14 +38,14 @@ public class ConsumeEvent : MonoBehaviour
 
             if (playerTransform.localScale.x > 1) 
             {
-                playerTransform.localScale += new Vector3(-0.1f, -0.1f, 0) * consumableValue / 2;
+                playerTransform.localScale += new Vector3(-0.1f, -0.1f, 0) * consumableValue / 4;
             }   
         }
     }
 
     void ConsumeObject() 
     {
-        playerTransform.localScale += new Vector3(0.1f, 0.1f, 0) * consumableValue / 2;
+        playerTransform.localScale += new Vector3(0.1f, 0.1f, 0) * consumableValue / 4;
 
         SizeManager.Instance.Grow(consumableValue);
     }

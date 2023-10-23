@@ -26,13 +26,13 @@ public class ConsumeEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<ConsumableData>().stats.consumableSize <= SizeManager.Instance.playerSize)
+        if (collision.GetComponent<Transform>().localScale.x <= transform.localScale.x)
         {
             consumableValue = collision.GetComponent<ConsumableData>().stats.sizeValue;
             m_EatObject.Invoke();
             Destroy(collision.gameObject);
         }
-        else if (collision.GetComponent<ConsumableData>().stats.consumableSize > SizeManager.Instance.playerSize)
+        else if (collision.GetComponent<Transform>().localScale.x > transform.localScale.x)
         {
             SizeManager.Instance.TakeDamage(collision.GetComponent<ConsumableData>().stats.damage);
 

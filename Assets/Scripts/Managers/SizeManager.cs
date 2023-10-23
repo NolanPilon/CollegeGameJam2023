@@ -70,29 +70,31 @@ public class SizeManager : MonoBehaviour
 
     public bool isFull()
     {
-       if(sizeBar.fillAmount == 1 || sizeBar.fillAmount > 1)
+        if (sizeBar.fillAmount == 1 || sizeBar.fillAmount > 1)
         {
             sizeBar.fillAmount = 0;
             sizeAmount = 0.0f;
             return true;
         }
-       else
+        else
         {
             return false;
 
-    //Shrink enmemies when level up
-    void ShrinkEnemies(string enemyTierTag)
-    {
-        GameObject[] enemiesToDelete = GameObject.FindGameObjectsWithTag(enemyTierTag);
-
-        for (int i = 0; i < enemiesToDelete.Length; i++) 
-        {
-            if (enemiesToDelete[i].transform.localScale.x <= 0.25f) 
+            //Shrink enmemies when level up
+            void ShrinkEnemies(string enemyTierTag)
             {
-                Destroy(enemiesToDelete[i]);
-            }
+                GameObject[] enemiesToDelete = GameObject.FindGameObjectsWithTag(enemyTierTag);
 
-            enemiesToDelete[i].transform.localScale /= 2;
+                for (int i = 0; i < enemiesToDelete.Length; i++)
+                {
+                    if (enemiesToDelete[i].transform.localScale.x <= 0.25f)
+                    {
+                        Destroy(enemiesToDelete[i]);
+                    }
+
+                    enemiesToDelete[i].transform.localScale /= 2;
+                }
+            }
         }
     }
 }

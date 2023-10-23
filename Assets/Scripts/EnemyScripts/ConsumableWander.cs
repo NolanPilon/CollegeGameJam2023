@@ -19,7 +19,8 @@ public class ConsumableWander : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.localPosition.x >= target.x && transform.localPosition.y <= target.y)
+        if (transform.localPosition.x >= target.x && transform.localPosition.y <= target.y || 
+            transform.localPosition.x <= target.x && transform.localPosition.y >= target.y)
         {
             PickDirection();
         }

@@ -10,10 +10,12 @@ public class SizeManager : MonoBehaviour
     //SizeBar
     public Image sizeBar;
     public float sizeAmount = 100f;
+    private float sizeBarScaleMultiplier = 2.0f;
 
     public Image delaySizeBar;
 
     public int playerSize = 0;
+
 
 
     private void Awake()
@@ -48,7 +50,7 @@ public class SizeManager : MonoBehaviour
 
     public void Grow(int growAmount)
     {
-        sizeAmount += growAmount;
+        sizeAmount += growAmount * sizeBarScaleMultiplier;
         playerSize += growAmount;
         sizeAmount = Mathf.Clamp(sizeAmount, 0, 100);
         

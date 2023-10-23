@@ -23,10 +23,10 @@ public class CameraManager : MonoBehaviour
     [Header("Zoom Variables")]
     private float zoom;
     private float minZoom = 2f;
-    private float maxZoom = 16f;
+    private float maxZoom = 32f;
     private float zoomVelocity = 0;
     private float zoomSmoothTime = 1f;
-    [SerializeField] private Camera cam;
+    public Camera cam;
 
 
 
@@ -64,9 +64,6 @@ public class CameraManager : MonoBehaviour
 
         while (Mathf.Round(cam.orthographicSize) != zoom )
         {
-            Debug.Log(zoom - 2.0f);
-            Debug.Log(zoom);
-            Debug.Log(cam.orthographicSize);
             cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref zoomVelocity, zoomSmoothTime);
             yield return null;
         }

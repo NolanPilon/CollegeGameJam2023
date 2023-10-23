@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ConsumableWander : MonoBehaviour
 {
-    [SerializeField] private float wanderDirectionTime = 1.0f;
     [SerializeField] private float wanderSpeed = 1.0f;
 
     [SerializeField] private Vector2 target = new Vector2(0, 0);

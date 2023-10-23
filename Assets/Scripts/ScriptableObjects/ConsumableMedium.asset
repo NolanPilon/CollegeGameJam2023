@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a1646e4c440a24dab6ab0ffdc2d100, type: 3}
   m_Name: ConsumableMedium
   m_EditorClassIdentifier: 
-  consumableSize: 12
   sizeValue: 10
-  damage: 3
+  damage: 6

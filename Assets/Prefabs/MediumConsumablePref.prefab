@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3700810280500039330}
   m_Layer: 0
   m_Name: Consumable
-  m_TagString: Untagged
+  m_TagString: EnemyTier1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cffc3eead9fcd4d8b64bc8c0642b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderDirectionTime: 2
   wanderSpeed: 2
   target: {x: 0, y: 0}
 --- !u!114 &3700810280500039330

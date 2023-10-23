@@ -31,7 +31,8 @@ public class ConsumeEvent : MonoBehaviour
     //Pass through object info later
     void ConsumeObject() 
     {
-        playerTransform.localScale += new Vector3(0.5f, 0.5f, 0);
+        playerTransform.localScale += new Vector3(0.1f, 0.1f, transform.localScale.z);
+        
         Debug.Log("YUUUUUM!!!");
     }
 }

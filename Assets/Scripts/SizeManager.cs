@@ -11,16 +11,13 @@ public class SizeManager : MonoBehaviour
     public Image sizeBar;
     public float sizeAmount = 100f;
 
-    public Image delaySizeBar;
-  
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            TakeDamager(20);
+            TakeDamage(20);
         }
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -28,14 +25,11 @@ public class SizeManager : MonoBehaviour
         }
     }
 
-    public void TakeDamager(float damage)
+    public void TakeDamage(float damage)
     {
-        StartCoroutine(delayBarSrink());
         sizeAmount -= damage;
         sizeBar.fillAmount = sizeAmount / 100f;
-
-
-    }
+      }
 
     public void Grow(float growAmount)
     {
@@ -43,15 +37,6 @@ public class SizeManager : MonoBehaviour
         sizeAmount = Mathf.Clamp(sizeAmount, 0, 100);
 
         sizeBar.fillAmount = sizeAmount / 100f;
-    }
-
-    IEnumerator delayBarSrink()
-    {
-        yield return new WaitForSeconds(1);
-
-        delaySizeBar.fillAmount = sizeAmount / 100f;
-
-        Debug.Log("fuck");
     }
 }
 

@@ -10,8 +10,6 @@ public class ConsumableWander : MonoBehaviour
 
     [SerializeField] private Vector2 target = new Vector2(0, 0);
    
-
-
     void Start()
     {
         PickDirection();

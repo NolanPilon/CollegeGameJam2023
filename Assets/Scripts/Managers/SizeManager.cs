@@ -15,7 +15,7 @@ public class SizeManager : MonoBehaviour
 
     public Image delaySizeBar;
 
-    public int playerSize = 0;
+    public int playerLevel = 0;
 
 
 
@@ -33,27 +33,25 @@ public class SizeManager : MonoBehaviour
 
     private void Start()
     {
-        playerSize = 1;
+        playerLevel = 1;
         sizeBar.fillAmount = 0;
         delaySizeBar.fillAmount = 0;
     }
 
     public void TakeDamage(int damage)
     {
-        if (playerSize > 1) 
+        if (sizeAmount > 0) 
         {
             StartCoroutine(delayBarSrink());
             CameraManager.Instance.CameraShake(0.3f, 0.2f);
             sizeAmount -= damage;
             sizeBar.fillAmount = sizeAmount / 100f;
-            playerSize--;
         }
     }
 
     public void Grow(int growAmount)
     {
         sizeAmount += growAmount * sizeBarScaleMultiplier;
-        playerSize += growAmount;
         sizeAmount = Mathf.Clamp(sizeAmount, 0, 100);
         
 

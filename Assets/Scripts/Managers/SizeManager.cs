@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SizeManager : MonoBehaviour
 {
@@ -14,8 +15,6 @@ public class SizeManager : MonoBehaviour
     private float sizeBarScaleMultiplier = 2.0f;
 
     public int playerLevel = 0;
-
-
 
     private void Awake()
     {
@@ -43,7 +42,6 @@ public class SizeManager : MonoBehaviour
 
         sizeBar.fillAmount = sizeAmount / 100f;
     }
-
     public bool isFull()
     {
         if (sizeBar.fillAmount == 1 || sizeBar.fillAmount > 1)

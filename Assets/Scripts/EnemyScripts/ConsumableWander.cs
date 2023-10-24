@@ -20,9 +20,6 @@ public class ConsumableWander : MonoBehaviour
 
     private GameObject playerRef = null;
 
-    private float distanceToPlayer = 1.0f;
-    private float fleeDistance = 5.0f;
-
     void Start()
     { 
         playerRef = GameObject.FindGameObjectWithTag("Player");
@@ -31,6 +28,11 @@ public class ConsumableWander : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (SizeManager.Instance.playerLevel >= 2)
+        {
+            state = (int)AI_BEHAVIOUR.WANDER;
+        }
+
         if (state == (int)AI_BEHAVIOUR.WANDER) 
         {
             if (transform.localPosition.x >= target.x && transform.localPosition.y <= target.y ||

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemyTier1
   - EnemyTier2
+  - DeathUI
   layers:
   - Default
   - TransparentFX

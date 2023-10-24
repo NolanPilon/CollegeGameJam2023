@@ -6,9 +6,9 @@ using UnityEngine.Events;
 
 public class ConsumeEvent : MonoBehaviour
 {
+    [SerializeField] private GameObject deathScreen;
     private Transform playerTransform = null;
     private int consumableValue = 0;
-
 
     UnityEvent m_EatObject;
     void Start()
@@ -34,10 +34,7 @@ public class ConsumeEvent : MonoBehaviour
         }
         else if (collision.GetComponent<Transform>().localScale.x > transform.localScale.x)
         {
-            if (playerTransform.localScale.x > 1) 
-            {
-                playerTransform.localScale += new Vector3(-0.1f, -0.1f, 0) * consumableValue / 4;
-            }
+            PassAway();
         }
     }
 
@@ -48,5 +45,11 @@ public class ConsumeEvent : MonoBehaviour
 
         SizeManager.Instance.Grow(consumableValue / SizeManager.Instance.playerLevel);
         Debug.Log(SpawnManager.Instance.currentEnemyCount);
+    }
+
+    void PassAway() 
+    {
+        deathScreen.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

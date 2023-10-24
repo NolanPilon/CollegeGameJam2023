@@ -40,8 +40,8 @@ public class SpawnManager : MonoBehaviour
         if (currentEnemyCount < MAX_ENEMIES && SizeManager.Instance.playerLevel >= 2)
         {
             SizeManager.Instance.ShrinkEnemies("EnemyTier1");
-            SpawnEnemies(2, 4);
-            RespawnEnemy(2, 4);
+            SpawnEnemies(1, 4);
+            //RespawnEnemy(1, 4);
         }
     }
 

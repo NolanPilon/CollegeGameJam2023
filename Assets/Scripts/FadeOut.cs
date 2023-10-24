@@ -9,7 +9,7 @@ public class FadeOut : MonoBehaviour
 
     private void Update()
     {
-        if (SizeManager.Instance.playerLevel >= 5) 
+        if (SizeManager.Instance.playerLevel >= 2) 
         {
             fadeObject.SetActive(true);
             animator.SetTrigger("Start");

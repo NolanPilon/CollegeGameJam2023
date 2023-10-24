@@ -938,7 +938,6 @@ GameObject:
   - component: {fileID: 663808410}
   - component: {fileID: 663808409}
   - component: {fileID: 663808408}
-  - component: {fileID: 663808411}
   m_Layer: 5
   m_Name: Fade In
   m_TagString: Untagged
@@ -1000,7 +999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1024,18 +1023,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663808406}
   m_CullTransparentMesh: 1
---- !u!114 &663808411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663808406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5301fe97ac9a1a449dab04ca34f5305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &912951397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1921,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1606314017}
+  m_Father: {fileID: 1595781550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471346523
 GameObject:
@@ -2081,14 +2068,10 @@ GameObject:
   - component: {fileID: 1595781550}
   - component: {fileID: 1595781553}
   - component: {fileID: 1595781552}
-  - component: {fileID: 1595781551}
   - component: {fileID: 1595781554}
+  - component: {fileID: 1595781551}
   m_Layer: 5
-  m_Name: Fade
-  - component: {fileID: 1606314017}
-  - component: {fileID: 1606314016}
-  m_Layer: 0
-  m_Name: SoundManager
+  m_Name: FadeOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2101,11 +2084,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595781549}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1378152330}
+  - {fileID: 2084263401}
   m_Father: {fileID: 1195676639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2123,7 +2108,7 @@ Animator:
   m_GameObject: {fileID: 1595781549}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4754a5dd99413e4449c6f17ecd896b14, type: 2}
+  m_Controller: {fileID: 9100000, guid: 36c83eb9ec2333d4680351a000d4f34a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2148,14 +2133,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2166,16 +2151,6 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1595781553
 CanvasRenderer:
-  m_GameObject: {fileID: 1606314015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2566f26df7aa83f4e85a5773300b8592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffect: {fileID: 1378152329}
-  music: {fileID: 2084263400}
---- !u!4 &1606314017
-Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2194,17 +2169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5301fe97ac9a1a449dab04ca34f5305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GameObject: {fileID: 1606314015}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.097047, y: -0.018851958, z: -0.04106173}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2084263401}
-  - {fileID: 1378152330}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651416573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,7 +2956,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1606314017}
+  m_Father: {fileID: 1595781550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2104635989
 GameObject:
@@ -3215,4 +3179,3 @@ SceneRoots:
   - {fileID: 1651416574}
   - {fileID: 1929570585}
   - {fileID: 912951400}
-  - {fileID: 1606314017}

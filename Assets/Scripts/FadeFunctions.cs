@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FadeIn : MonoBehaviour
+public class FadeFunctions : MonoBehaviour
 {
-    public void DisableUIImage() 
+    public void DisableUI() 
     {
+        Debug.Log("HUUH");
         gameObject.SetActive(false);
     }
 

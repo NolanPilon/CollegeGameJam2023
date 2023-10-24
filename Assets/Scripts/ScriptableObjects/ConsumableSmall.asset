@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a1646e4c440a24dab6ab0ffdc2d100, type: 3}
   m_Name: ConsumableSmall
   m_EditorClassIdentifier: 
-  consumableSize: 1
   sizeValue: 3
-  damage: 0
+  unitType: 0

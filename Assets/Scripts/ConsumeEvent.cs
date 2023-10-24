@@ -5,7 +5,8 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ConsumeEvent : MonoBehaviour
+public class ConsumeEvent : MonoBehaviour 
+{
     [SerializeField] private GameObject deathScreen;
     private GameObject mobGameObject = null;
     private Transform playerTransform = null;

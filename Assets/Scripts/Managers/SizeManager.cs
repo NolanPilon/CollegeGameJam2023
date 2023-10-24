@@ -13,8 +13,6 @@ public class SizeManager : MonoBehaviour
     public float sizeAmount = 0.0f;
     private float sizeBarScaleMultiplier = 2.0f;
 
-    public Image delaySizeBar;
-
     public int playerLevel = 0;
 
 
@@ -35,18 +33,6 @@ public class SizeManager : MonoBehaviour
     {
         playerLevel = 1;
         sizeBar.fillAmount = 0;
-        delaySizeBar.fillAmount = 0;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        if (sizeAmount > 0) 
-        {
-            StartCoroutine(delayBarSrink());
-            CameraManager.Instance.CameraShake(0.3f, 0.2f);
-            sizeAmount -= damage;
-            sizeBar.fillAmount = sizeAmount / 100f;
-        }
     }
 
     public void Grow(int growAmount)
@@ -58,41 +44,28 @@ public class SizeManager : MonoBehaviour
         sizeBar.fillAmount = sizeAmount / 100f;
     }
 
-    IEnumerator delayBarSrink()
-    {
-        yield return new WaitForSeconds(1);
-
-        delaySizeBar.fillAmount = sizeAmount / 100f;
-    }
-
-
     public bool isFull()
     {
         if (sizeBar.fillAmount == 1 || sizeBar.fillAmount > 1)
         {
             sizeBar.fillAmount = 0;
             sizeAmount = 0.0f;
+            playerLevel++;
             return true;
         }
         else
         {
             return false;
+        }
+    }
+    public void ShrinkEnemies(string enemyTierTag)
+    {
+        GameObject[] enemiesToDelete = GameObject.FindGameObjectsWithTag(enemyTierTag);
 
-            //Shrink enmemies when level up
-            void ShrinkEnemies(string enemyTierTag)
-            {
-                GameObject[] enemiesToDelete = GameObject.FindGameObjectsWithTag(enemyTierTag);
-
-                for (int i = 0; i < enemiesToDelete.Length; i++)
-                {
-                    if (enemiesToDelete[i].transform.localScale.x <= 0.25f)
-                    {
-                        Destroy(enemiesToDelete[i]);
-                    }
-
-                    enemiesToDelete[i].transform.localScale /= 2;
-                }
-            }
+        for (int i = 0; i < enemiesToDelete.Length; i++)
+        {
+            SpawnManager.Instance.currentEnemyCount--;
+            Destroy(enemiesToDelete[i]);
         }
     }
 }

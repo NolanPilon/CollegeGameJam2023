@@ -68,7 +68,6 @@ public class ConsumeEvent : MonoBehaviour
 
 
         SizeManager.Instance.Grow(consumableValue / SizeManager.Instance.playerLevel);
-        Debug.Log(SpawnManager.Instance.currentEnemyCount);
     }
 
     void PassAway() 

@@ -28,6 +28,11 @@ public class ConsumableWander : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (SizeManager.Instance == null) 
+        {
+            return;
+        }
+
         if (SizeManager.Instance.playerLevel >= 2)
         {
             state = (int)AI_BEHAVIOUR.WANDER;

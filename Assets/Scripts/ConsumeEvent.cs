@@ -45,6 +45,7 @@ public class ConsumeEvent : MonoBehaviour
 
     void ConsumeObject() 
     {
+        SpawnManager.Instance.currentEnemyCount--;
         playerTransform.localScale += new Vector3(0.1f, 0.1f, 0) * consumableValue / 4;
 
         SizeManager.Instance.Grow(consumableValue);

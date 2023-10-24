@@ -13,6 +13,9 @@ public class PlayerLevelUp : MonoBehaviour
 
     public ParticleSystem splurg;
 
+    [SerializeField]
+    private AudioClip growAudio = null;
+
 
 
     private void Start()
@@ -26,6 +29,7 @@ public class PlayerLevelUp : MonoBehaviour
             allowedToGrow = true;
             playerStartingSize = playerTransform.localScale.y;
             playerMultiplier = playerStartingSize * 2;
+            SoundManager.Instance.PlaySound(growAudio);
             splurg.Play();
             CameraManager.Instance.CameraShake(3, 0.1f);
             StartCoroutine(ZoomOut());

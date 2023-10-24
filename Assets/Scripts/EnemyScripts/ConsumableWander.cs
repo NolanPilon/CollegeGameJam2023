@@ -33,7 +33,7 @@ public class ConsumableWander : MonoBehaviour
             return;
         }
 
-        if (SizeManager.Instance.playerLevel >= 2)
+        if (SizeManager.Instance != null && SizeManager.Instance.playerLevel >= 2)
         {
             state = (int)AI_BEHAVIOUR.WANDER;
         }

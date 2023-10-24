@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ConsumableExtraLarge
   m_EditorClassIdentifier: 
   sizeValue: 6
+  unitType: 4

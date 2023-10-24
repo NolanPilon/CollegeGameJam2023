@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a1646e4c440a24dab6ab0ffdc2d100, type: 3}
-  m_Name: ConsumableMedium
+  m_Name: ConsumableLarge
   m_EditorClassIdentifier: 
-  sizeValue: 5
+  sizeValue: 8

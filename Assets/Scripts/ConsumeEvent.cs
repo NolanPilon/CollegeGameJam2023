@@ -1,14 +1,22 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ConsumeEvent : MonoBehaviour
 {
+    private GameObject mobGameObject = null;
     private Transform playerTransform = null;
     private int consumableValue = 0;
+    private int mobType = 0;
+    private Vector3 mobScale;
 
+    [SerializeField]
+    private ParticleSystem[] death = null;
+
+    private ParticleSystem deathReSized = null;
 
     UnityEvent m_EatObject;
     void Start()
@@ -28,8 +36,16 @@ public class ConsumeEvent : MonoBehaviour
     {
         if (collision.GetComponent<Transform>().localScale.x <= transform.localScale.x)
         {
+            //information for deaths
+            mobType = collision.GetComponent<ConsumableData>().stats.unitType;
+            mobGameObject = collision.gameObject;
+            mobScale = collision.gameObject.transform.localScale;
+
+
             consumableValue = collision.GetComponent<ConsumableData>().stats.sizeValue;
             m_EatObject.Invoke();
+
+
             Destroy(collision.gameObject);
         }
         else if (collision.GetComponent<Transform>().localScale.x > transform.localScale.x)
@@ -45,6 +61,14 @@ public class ConsumeEvent : MonoBehaviour
     {
         SpawnManager.Instance.currentEnemyCount--;
         playerTransform.localScale += new Vector3(0.1f, 0.1f, 0) * consumableValue / 4;
+
+        //sets deathReSized value to the correct value
+        deathReSized = death[mobType];
+        //rescale the particles to mathc the size of mob
+        deathReSized.transform.localScale = mobScale;
+
+        Instantiate(death[mobType], mobGameObject.transform.position,Quaternion.identity);
+
 
         SizeManager.Instance.Grow(consumableValue / SizeManager.Instance.playerLevel);
         Debug.Log(SpawnManager.Instance.currentEnemyCount);

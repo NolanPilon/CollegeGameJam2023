@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ConsumableMedium
   m_EditorClassIdentifier: 
   sizeValue: 5
+  unitType: 2

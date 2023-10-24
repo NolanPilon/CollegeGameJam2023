@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7506051423717256269}
   - component: {fileID: 3708860374235166219}
   - component: {fileID: 1840584835886816336}
+  - component: {fileID: -556665803202505737}
   m_Layer: 0
-  m_Name: DeathParticles
+  m_Name: DeathParticlesBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,14 +118,14 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -297,7 +298,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9433962, g: 0.5562478, b: 0.71259624, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1054,7 +1055,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 25
+        scalar: 10
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1105,7 +1106,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 1
-      repeatInterval: 0.01
+      repeatInterval: 5
       probability: 1
   SizeModule:
     enabled: 1
@@ -1628,7 +1629,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: b35b427df96fbd146a8df52c09f43d12, type: 3}
+    - sprite: {fileID: 21300000, guid: 29cab699036efa8449f1efce7f85687e, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4897,3 +4898,15 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &-556665803202505737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110959101497470895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb6f5d7ed470a648a2fa71743a9c875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

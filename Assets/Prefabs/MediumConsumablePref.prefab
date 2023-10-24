@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6921853727469515957}
   m_Layer: 0
   m_Name: Consumable
-  m_TagString: EnemyTier1
+  m_TagString: EnemyTier2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1901271778902002657}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 1901271778902002657}
   m_Layer: 0
   m_Name: MediumConsumablePref
-  m_TagString: EnemyTier1
+  m_TagString: EnemyTier2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 4486051172705432745}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29, y: -32, z: 0}
+  m_LocalPosition: {x: -18, y: -47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

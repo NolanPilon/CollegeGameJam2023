@@ -6,5 +6,4 @@ using UnityEngine;
 public class ConsumableStats : ScriptableObject
 {
     public int sizeValue = 1;
-    public int damage = 1;
 }

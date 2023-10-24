@@ -34,12 +34,10 @@ public class ConsumeEvent : MonoBehaviour
         }
         else if (collision.GetComponent<Transform>().localScale.x > transform.localScale.x)
         {
-            SizeManager.Instance.TakeDamage(collision.GetComponent<ConsumableData>().stats.damage);
-
             if (playerTransform.localScale.x > 1) 
             {
                 playerTransform.localScale += new Vector3(-0.1f, -0.1f, 0) * consumableValue / 4;
-            }   
+            }
         }
     }
 
@@ -48,6 +46,7 @@ public class ConsumeEvent : MonoBehaviour
         SpawnManager.Instance.currentEnemyCount--;
         playerTransform.localScale += new Vector3(0.1f, 0.1f, 0) * consumableValue / 4;
 
-        SizeManager.Instance.Grow(consumableValue);
+        SizeManager.Instance.Grow(consumableValue / SizeManager.Instance.playerLevel);
+        Debug.Log(SpawnManager.Instance.currentEnemyCount);
     }
 }

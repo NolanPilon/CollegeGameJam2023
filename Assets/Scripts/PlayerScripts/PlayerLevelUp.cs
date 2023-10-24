@@ -11,6 +11,8 @@ public class PlayerLevelUp : MonoBehaviour
     private float velocity = 0.0f;
     private bool allowedToGrow = false;
 
+    public ParticleSystem splurg;
+
 
 
     private void Start()
@@ -24,6 +26,7 @@ public class PlayerLevelUp : MonoBehaviour
             allowedToGrow = true;
             playerStartingSize = playerTransform.localScale.y;
             playerMultiplier = playerStartingSize * 2;
+            splurg.Play();
             CameraManager.Instance.CameraShake(3, 0.1f);
             StartCoroutine(ZoomOut());
         }
@@ -35,7 +38,6 @@ public class PlayerLevelUp : MonoBehaviour
 
             if (Mathf.Round(playerStartingSize +1f) >= playerMultiplier)
             {
-                
                 allowedToGrow = false;
             }
         }
@@ -44,7 +46,10 @@ public class PlayerLevelUp : MonoBehaviour
     IEnumerator ZoomOut()
     {
         yield return new WaitForSecondsRealtime(3.0f);
+        splurg.Pause();
+        splurg.Clear();
         CameraManager.Instance.CameraZoom(CameraManager.Instance.cam.orthographicSize * 1.5f);
         StopCoroutine(ZoomOut());
+
     }
 }
